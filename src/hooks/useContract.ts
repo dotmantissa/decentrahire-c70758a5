@@ -23,7 +23,7 @@ export function useContract() {
     try {
       const client = getWriteClient(pk);
       const hash = await client.writeContract({
-        address: CONTRACT_ADDRESS, functionName: fn, args, leaderOnly: false,
+        address: CONTRACT_ADDRESS, functionName: fn, args, leaderOnly: false, value: BigInt(0),
       });
       setTx(s => ({ ...s, hash }));
 
