@@ -15,7 +15,7 @@ export function StatsBar() {
     { label: "Open", value: j.filter(x => x.status === "OPEN").length, color: "var(--green)" },
     { label: "In Progress", value: j.filter(x => ["ACTIVE", "PENDING_REVIEW"].includes(x.status)).length, color: "var(--blue)" },
     { label: "Completed", value: j.filter(x => ["APPROVED", "RESOLVED_FREELANCER", "RESOLVED_CLIENT"].includes(x.status)).length, color: "var(--amber-3)" },
-    { label: "Value Locked", value: j.filter(x => ["OPEN", "ACTIVE", "PENDING_REVIEW", "DISPUTED"].includes(x.status)).reduce((s, x) => s + x.payment_amount, 0) + " GL", color: "var(--terra-2)" },
+    { label: "Value Locked", value: j.filter(x => ["OPEN", "ACTIVE", "PENDING_REVIEW", "DISPUTED"].includes(x.status)).reduce((s, x) => s + x.payment_amount, 0) + " $GEN", color: "var(--terra-2)" },
   ];
 
   return (

@@ -14,7 +14,7 @@ export function JobCard({ job, currentAddr, onClick }: { job: Job; currentAddr: 
         </div>
         <div style={{ textAlign: "right" }}>
           <div style={{ fontSize: 20, fontWeight: 700, color: "var(--amber-3)" }}>{job.payment_amount}</div>
-          <div className="label-caps">GL tokens</div>
+          <div className="label-caps">$GEN</div>
         </div>
       </div>
       <h3 className="display-sm" style={{ marginBottom: 8 }}>{job.title}</h3>

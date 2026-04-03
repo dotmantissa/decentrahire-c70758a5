@@ -56,7 +56,7 @@ export function JobModal({ jobId, onClose }: { jobId: string; onClose: () => voi
             </div>
             <div style={{ textAlign: "right" }}>
               <span style={{ fontSize: 22, fontWeight: 700, color: "var(--amber-3)" }}>{job.payment_amount}</span>
-              <div className="label-caps">GL tokens</div>
+              <div className="label-caps">$GEN</div>
             </div>
           </div>
           <h2 className="display-md" style={{ marginTop: 12 }}>{job.title}</h2>

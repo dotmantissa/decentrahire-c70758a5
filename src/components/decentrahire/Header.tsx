@@ -24,7 +24,7 @@ export function Header() {
             {connected && address ? (
               <>
                 <button className="btn btn-ghost btn-sm" onClick={() => setProfileOpen(!profileOpen)}>
-                  {truncAddr(address)} · {balance ?? 0} GL
+                  {truncAddr(address)} · {balance ?? 0} $GEN
                 </button>
                 <button className="btn btn-ghost btn-sm" onClick={() => setWalletOpen(true)}>💰</button>
                 <button className="btn btn-danger btn-sm" onClick={disconnect}>Disconnect</button>

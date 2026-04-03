@@ -51,9 +51,9 @@ export function PostJobModal({ onClose }: { onClose: () => void }) {
           </div>
 
           <div style={{ marginTop: 16 }}>
-            <label className="field-label">Payment (GL Tokens)</label>
+            <label className="field-label">Payment ($GEN Tokens)</label>
             <input className="input" type="number" placeholder="100" value={payment} onChange={e => setPayment(e.target.value)} />
-            {noFunds && <div className="body-sm danger" style={{ marginTop: 6 }}>Insufficient balance ({balance ?? 0} GL available)</div>}
+            {noFunds && <div className="body-sm danger" style={{ marginTop: 6 }}>Insufficient balance ({balance ?? 0} $GEN available)</div>}
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export function PostJobModal({ onClose }: { onClose: () => void }) {
             disabled={!valid || tx.loading}
             onClick={() => { reset(); postJob(title, desc, criteria, payNum, onClose); }}
           >
-            {tx.loading ? "Posting…" : `Post Job · ${payNum || 0} GL`}
+            {tx.loading ? "Posting…" : `Post Job · ${payNum || 0} $GEN`}
           </button>
         </div>
       </div>

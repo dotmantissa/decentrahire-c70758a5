@@ -96,7 +96,7 @@ export function WalletDrawer({ onClose }: { onClose: () => void }) {
                 <div className="card" style={{ padding: 20, textAlign: "center", marginBottom: 20 }}>
                   <div className="label-caps" style={{ marginBottom: 8 }}>Your Balance</div>
                   <div style={{ fontSize: 36, fontWeight: 700, color: "var(--amber-3)" }}>{balance ?? 0}</div>
-                  <div className="label-caps" style={{ marginTop: 4 }}>GL Tokens</div>
+                  <div className="label-caps" style={{ marginTop: 4 }}>$GEN Tokens</div>
                   <div className="body-sm" style={{ color: "var(--text-muted)", marginTop: 12 }}>
                     Funds are held in the contract's escrow ledger. Deposit before posting jobs. Withdraw earned tokens at any time.
                   </div>
@@ -105,7 +105,7 @@ export function WalletDrawer({ onClose }: { onClose: () => void }) {
                 <TxBanner tx={tx} onDismiss={reset} />
 
                 <div style={{ marginTop: 16 }}>
-                  <label className="field-label">Deposit GL Tokens</label>
+                  <label className="field-label">Deposit $GEN Tokens</label>
                   <div style={{ display: "flex", gap: 8 }}>
                     <input className="input" type="number" placeholder="Amount" value={depAmt} onChange={e => setDepAmt(e.target.value)} />
                     <button className="btn btn-gold" disabled={tx.loading || !depAmt} onClick={() => { reset(); depositFunds(Number(depAmt), () => setDepAmt("")); }} style={{ flexShrink: 0 }}>Deposit</button>
@@ -113,7 +113,7 @@ export function WalletDrawer({ onClose }: { onClose: () => void }) {
                 </div>
 
                 <div style={{ marginTop: 16 }}>
-                  <label className="field-label">Withdraw GL Tokens</label>
+                  <label className="field-label">Withdraw $GEN Tokens</label>
                   <div style={{ display: "flex", gap: 8 }}>
                     <input className="input" type="number" placeholder="Amount" value={wdAmt} onChange={e => setWdAmt(e.target.value)} />
                     <button className="btn btn-outline" disabled={tx.loading || !wdAmt} onClick={() => { reset(); withdrawFunds(Number(wdAmt), () => setWdAmt("")); }} style={{ flexShrink: 0 }}>Withdraw</button>
