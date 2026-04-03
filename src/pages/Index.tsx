@@ -1,16 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from "@/components/decentrahire/Header";
+import { StatsBar } from "@/components/decentrahire/StatsBar";
+import { JobBoard } from "@/components/decentrahire/JobBoard";
+import { HowItWorks } from "@/components/decentrahire/HowItWorks";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      <Header />
+      <main>
+        <section className="section container" style={{ textAlign: "center" }}>
+          <span className="label-caps amber">Trustless Freelance on GenLayer</span>
+          <h1 className="display-2xl" style={{ marginTop: 12 }}>
+            Work judged by <span className="gold-text">AI consensus</span>, not humans
+          </h1>
+          <p className="body-lg" style={{ color: "var(--text-secondary)", maxWidth: 640, margin: "20px auto 0" }}>
+            Post jobs, lock payment in escrow, deliver work, and let on-chain AI evaluate — across multiple independent validators. No middlemen. No bias.
+          </p>
+        </section>
+        <StatsBar />
+        <JobBoard />
+        <HowItWorks />
+        <footer className="section-sm container" style={{ textAlign: "center", borderTop: "1px solid var(--border)", paddingTop: 32 }}>
+          <p className="body-sm" style={{ color: "var(--text-muted)" }}>
+            Built on <a href="https://genlayer.com/" target="_blank" rel="noreferrer" style={{ color: "var(--amber-4)", textDecoration: "underline" }}>GenLayer</a> · Powered by AI Consensus · Non-Custodial
+          </p>
+        </footer>
+      </main>
+    </>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
