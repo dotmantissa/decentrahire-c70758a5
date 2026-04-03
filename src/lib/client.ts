@@ -1,5 +1,5 @@
 import { createClient, createAccount } from "genlayer-js";
-import { simulator } from "genlayer-js/chains";
+import { studionet } from "genlayer-js/chains";
 
 export const RPC_URL = "https://studio.genlayer.com/api";
 
@@ -7,7 +7,7 @@ export const CONTRACT_ADDRESS = "0x6f8893aE21847b4B4d37235222b0492729326744" as 
 
 /** Read-only client — no wallet needed for view calls */
 export const readClient = createClient({
-  chain: simulator,
+  chain: studionet,
   endpoint: RPC_URL,
   account: createAccount(),
 });
@@ -15,7 +15,7 @@ export const readClient = createClient({
 /** Authenticated client from a stored private key */
 export function getWriteClient(pk: `0x${string}`) {
   return createClient({
-    chain: simulator,
+    chain: studionet,
     endpoint: RPC_URL,
     account: createAccount(pk),
   });

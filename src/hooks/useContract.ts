@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { TransactionStatus } from "genlayer-js/types";
+import type { CalldataEncodable } from "genlayer-js/types";
 import { getWriteClient, CONTRACT_ADDRESS } from "@/lib/client";
 import { useWallet } from "@/lib/wallet-context";
 import type { TxState } from "@/lib/types";
@@ -14,7 +15,7 @@ export function useContract() {
 
   const reset = useCallback(() => setTx({ loading: false, hash: null, error: null, success: false }), []);
 
-  const write = useCallback(async (fn: string, args: unknown[], onDone?: (receipt: unknown) => void) => {
+  const write = useCallback(async (fn: string, args: CalldataEncodable[], onDone?: (receipt: unknown) => void) => {
     if (!pk) { setTx({ loading: false, hash: null, error: "Connect your wallet first.", success: false }); return null; }
     if (!CONTRACT_ADDRESS) { setTx({ loading: false, hash: null, error: "Contract address not configured.", success: false }); return null; }
 

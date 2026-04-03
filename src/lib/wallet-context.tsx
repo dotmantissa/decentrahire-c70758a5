@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
-import { createAccount } from "genlayer-js";
+import { createAccount, generatePrivateKey } from "genlayer-js";
 import { getStoredPk, storePk, clearPk, pkToAddress } from "@/lib/client";
 
 interface WalletCtx {
@@ -39,8 +39,8 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const generate = useCallback((): string => {
-    const acc = createAccount();
-    const key = acc.privateKey as `0x${string}`;
+    const key = generatePrivateKey();
+    const acc = createAccount(key);
     storePk(key);
     setPk(key);
     setAddress(acc.address);
