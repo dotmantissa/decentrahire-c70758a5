@@ -16,7 +16,7 @@ PAY = 1_000
 def _deploy(direct_deploy, direct_vm):
     # ADMIN is the deployer
     direct_vm.sender = ADMIN
-    return direct_deploy("contracts/decentrahire.py")
+    return direct_deploy("decentrahire.py")
 
 
 def _fund(contract, direct_vm, who, amount=PAY * 4):
